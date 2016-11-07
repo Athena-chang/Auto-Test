@@ -1,0 +1,329 @@
+1478506526335	geckodriver	INFO	Listening on 127.0.0.1:61473
+1478506528241	mozprofile::profile	INFO	Using profile path C:\Users\seadee\AppData\Local\Temp\rust_mozprofile.J8xWmwx930Mu
+1478506528241	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1478506528273	geckodriver::marionette	INFO	Connecting to Marionette on localhost:61480
+1478506530561	Marionette	INFO	Listening on port 61480
+1478506535121	Marionette	INFO	startBrowser a15362cc-21fe-437b-932a-584b5e03ec21
+1478506600077	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+[Child 8356] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
+0000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1478506430656	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+1478506458555	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+[Child 2332] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
+
+###!!! [Child][OnMaybeDequeueOne] Error: Channel error: cannot send/recv
+
+[Child 2332] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
+Hit MOZ_CRASH(MsgDropped) at c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/BackgroundChildImpl.cpp:141
+"  data: no]
+sendReply_@chrome://marionette/content/proxy.js:187:5
+reply@chrome://marionette/content/proxy.js:176:7
+sendToServer@chrome://marionette/content/listener.js:432:3
+sendError@chrome://marionette/content/listener.js:466:3
+dispatch/</<@chrome://marionette/content/listener.js:202:40
+Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:940:21
+this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:816:7
+this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:750:11
+
+/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/transport/transport.js:742:7
+console.error: 
+  Protocol error (unknownError): findCssSelector received element not inside document
+[Child 8220] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x400003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xFA0005,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0xFA0005,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x400003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+js:105:12
+ownPriorityGetterTrap.get/<@chrome://marionette/content/proxy.js:24:25
+GeckoDriver.prototype.findElement@chrome://marionette/content/driver.js:1689:31
+TaskImpl_run@resource://gre/modules/Task.jsm:319:40
+TaskImpl@resource://gre/modules/Task.jsm:280:3
+createAsyncFunction/asyncFunction@resource://gre/modules/Task.jsm:254:14
+Task_spawn@resource://gre/modules/Task.jsm:168:12
+TaskImpl_handleResultValue@resource://gre/modules/Task.jsm:388:16
+TaskImpl_run@resource://gre/modules/Task.jsm:327:13
+TaskImpl@resource://gre/modules/Task.jsm:280:3
+createAsyncFunction/asyncFunction@resource://gre/modules/Task.jsm:254:14
+Task_spawn@resource://gre/modules/Task.jsm:168:12
+Dispatcher.prototype.execute@chrome://marionette/content/dispatcher.js:117:13
+Dispatcher.prototype.onPacket@chrome://marionette/content/dispatcher.js:88:5
+DebuggerTransport.prototype._onJSONObjectReady/<@chrome://marionette/content/server.js -> resource://devtools/shared/transport/transport.js:479:11
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+
+*************************
+*************************
+A coding exception was thrown in a Promise rejection callback.
+See https://developer.mozilla.org/Mozilla/JavaScript_code_modules/Promise.jsm/Promise
+
+Full message: TypeError: this.browser.getBrowserForTab is not a function
+Full stack: hasRemotenessChange@chrome://marionette/content/browser.js:219:27
+executeWhenReady@chrome://marionette/content/browser.js:250:9
+GeckoDriver.prototype.sendAsync@chrome://marionette/content/driver.js:221:5
+send/<@chrome://marionette/content/proxy.js:138:7
+send@chrome://marionette/content/proxy.js:105:12
+ownPriorityGetterTrap.get/<@chrome://marionette/content/proxy.js:24:25
+GeckoDriver.prototype.findElement@chrome://marionette/content/driver.js:1689:31
+TaskImpl_run@resource://gre/modules/Task.jsm:319:40
+TaskImpl@resource://gre/modules/Task.jsm:280:3
+createAsyncFunction/asyncFunction@resource://gre/modules/Task.jsm:254:14
+Task_spawn@resource://gre/modules/Task.jsm:168:12
+TaskImpl_handleResultValue@resource://gre/modules/Task.jsm:388:16
+TaskImpl_run@resource://gre/modules/Task.jsm:327:13
+TaskImpl@resource://gre/modules/Task.jsm:280:3
+createAsyncFunction/asyncFunction@resource://gre/modules/Task.jsm:254:14
+Task_spawn@resource://gre/modules/Task.jsm:168:12
+Dispatcher.prototype.execute@chrome://marionette/content/dispatcher.js:117:13
+Dispatcher.prototype.onPacket@chrome://marionette/content/dispatcher.js:88:5
+DebuggerTransport.prototype._onJSONObjectReady/<@chrome://marionette/content/server.js -> resource://devtools/shared/transport/transport.js:479:11
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+
+*************************
+Marionette threw an error: TypeError: this.browser.getBrowserForTab is not a function
+hasRemotenessChange@chrome://marionette/content/browser.js:219:27
+executeWhenReady@chrome://marionette/content/browser.js:250:9
+GeckoDriver.prototype.sendAsync@chrome://marionette/content/driver.js:221:5
+send/<@chrome://marionette/content/proxy.js:138:7
+send@chrome://marionette/content/proxy.js:105:12
+ownPriorityGetterTrap.get/<@chrome://marionette/content/proxy.js:24:25
+GeckoDriver.prototype.findElement@chrome://marionette/content/driver.js:1689:31
+TaskImpl_run@resource://gre/modules/Task.jsm:319:40
+TaskImpl@resource://gre/modules/Task.jsm:280:3
+createAsyncFunction/asyncFunction@resource://gre/modules/Task.jsm:254:14
+Task_spawn@resource://gre/modules/Task.jsm:168:12
+TaskImpl_handleResultValue@resource://gre/modules/Task.jsm:388:16
+TaskImpl_run@resource://gre/modules/Task.jsm:327:13
+TaskImpl@resource://gre/modules/Task.jsm:280:3
+createAsyncFunction/asyncFunction@resource://gre/modules/Task.jsm:254:14
+Task_spawn@resource://gre/modules/Task.jsm:168:12
+Dispatcher.prototype.execute@chrome://marionette/content/dispatcher.js:117:13
+Dispatcher.prototype.onPacket@chrome://marionette/content/dispatcher.js:88:5
+DebuggerTransport.prototype._onJSONObjectReady/<@chrome://marionette/content/server.js -> resource://devtools/shared/transport/transport.js:479:11
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+
+ource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
+
+[Child 80452] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
+cated
+JavaScript warning: http://message.csdn.net/msg.popup.js, line 1143: redeclaration of block-scoped function `_message_callback' is deprecated
+JavaScript warning: http://message.csdn.net/msg.popup.js, line 1179: redeclaration of block-scoped function `_message_get_search_args' is deprecated
+JavaScript warning: http://message.csdn.net/msg.popup.js, line 1196: redeclaration of block-scoped function `_msg_item_click_count' is deprecated
+JavaScript warning: http://message.csdn.net/msg.popup.js, line 1203: redeclaration of block-scoped function `_message_callback' is deprecated
+JavaScript warning: http://message.csdn.net/msg.popup.js, line 1239: redeclaration of block-scoped function `_message_get_search_args' is deprecated
+JavaScript warning: http://message.csdn.net/msg.popup.js, line 1256: redeclaration of block-scoped function `_msg_item_click_count' is deprecated
+JavaScript warning: http://message.csdn.net/msg.popup.js, line 1263: redeclaration of block-scoped function `_message_callback' is deprecated
+JavaScript warning: http://message.csdn.net/msg.popup.js, line 1299: redeclaration of block-scoped function `_message_get_search_args' is deprecated
+JavaScript warning: http://message.csdn.net/msg.popup.js, line 1316: redeclaration of block-scoped function `_msg_item_click_count' is deprecated
+JavaScript warning: http://message.csdn.net/msg.popup.js, line 1323: redeclaration of block-scoped function `_message_callback' is deprecated
+JavaScript warning: http://message.csdn.net/msg.popup.js, line 1359: redeclaration of block-scoped function `_message_get_search_args' is deprecated
+JavaScript warning: http://message.csdn.net/msg.popup.js, line 1376: redeclaration of block-scoped function `_msg_item_click_count' is deprecated
+JavaScript warning: http://message.csdn.net/msg.popup.js, line 1383: redeclaration of block-scoped function `_message_callback' is deprecated
+JavaScript warning: http://message.csdn.net/msg.popup.js, line 1419: redeclaration of block-scoped function `_message_get_search_args' is deprecated
+JavaScript warning: http://message.csdn.net/msg.popup.js, line 1436: redeclaration of block-scoped function `_msg_item_click_count' is deprecated
+JavaScript warning: http://message.csdn.net/msg.popup.js, line 1443: redeclaration of block-scoped function `_message_callback' is deprecated
+JavaScript warning: http://message.csdn.net/msg.popup.js, line 1479: redeclaration of block-scoped function `_message_get_search_args' is deprecated
+JavaScript warning: http://message.csdn.net/msg.popup.js, line 1496: redeclaration of block-scoped function `_msg_item_click_count' is deprecated
+JavaScript warning: http://message.csdn.net/msg.popup.js, line 1503: redeclaration of block-scoped function `_message_callback' is deprecated
+JavaScript warning: http://message.csdn.net/msg.popup.js, line 1539: redeclaration of block-scoped function `_message_get_search_args' is deprecated
+JavaScript error: http://c.csdnimg.cn//atsuggest/atsuggest.js, line 588: TypeError: obj is null
+JavaScript warning: http://pos.baidu.com/qcum?rdid=2394820&dc=2&di=u2394820&dri=0&dis=0&dai=2&ps=201x1206&dcb=BAIDU_SSP_define&dtm=HTML_POST&dvi=0.0&dci=-1&dpt=none&tsr=0&tpr=1477376994707&ti=try%20finally%20()%E8%A1%A8%E7%A4%BA%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D-CSDN%E8%AE%BA%E5%9D%9B-CSDN.NET-%E4%B8%AD%E5%9B%BD%E6%9C%80%E5%A4%A7%E7%9A%84IT%E6%8A%80%E6%9C%AF%E7%A4%BE%E5%8C%BA&ari=2&dbv=0&drs=3&pcs=1903x943&pss=1903x9866&cfv=23&cpl=1&chi=1&cce=true&cec=UTF-8&tlm=1477376999&rw=943&ltu=http%3A%2F%2Fbbs.csdn.net%2Ftopics%2F310231188&ltr=https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3D9kLCzanpZfK_riy70-av_ixkWbCtqX766uhRER__Zb_2sibG06bekTHElbhHahDJ%26wd%3D%26eqid%3De39afa8a000051dc00000005580efbc8&ecd=1&psr=1920x1080&par=1920x1040&pis=-1x-1&ccd=24&cja=false&cmi=2&col=zh-CN&cdo=-1&tcn=1477377000&qn=b795aa1bd70ed06a&tt=1477376994021.5583.6359.6362, line 86: unreachable code after return statement
+JavaScript warning: http://pos.baidu.com/qcum?rdid=2394820&dc=2&di=u2394820&dri=0&dis=0&dai=2&ps=201x1206&dcb=BAIDU_SSP_define&dtm=HTML_POST&dvi=0.0&dci=-1&dpt=none&tsr=0&tpr=1477376994707&ti=try%20finally%20()%E8%A1%A8%E7%A4%BA%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D-CSDN%E8%AE%BA%E5%9D%9B-CSDN.NET-%E4%B8%AD%E5%9B%BD%E6%9C%80%E5%A4%A7%E7%9A%84IT%E6%8A%80%E6%9C%AF%E7%A4%BE%E5%8C%BA&ari=2&dbv=0&drs=3&pcs=1903x943&pss=1903x9866&cfv=23&cpl=1&chi=1&cce=true&cec=UTF-8&tlm=1477376999&rw=943&ltu=http%3A%2F%2Fbbs.csdn.net%2Ftopics%2F310231188&ltr=https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3D9kLCzanpZfK_riy70-av_ixkWbCtqX766uhRER__Zb_2sibG06bekTHElbhHahDJ%26wd%3D%26eqid%3De39afa8a000051dc00000005580efbc8&ecd=1&psr=1920x1080&par=1920x1040&pis=-1x-1&ccd=24&cja=false&cmi=2&col=zh-CN&cdo=-1&tcn=1477377000&qn=b795aa1bd70ed06a&tt=1477376994021.5583.6359.6362, line 86: unreachable code after return statement
+tent/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x2C0043,name=PBrowser::Msg___delete__) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][OnMaybeDequeueOne] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][OnMaybeDequeueOne] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x820007,name=PHttpChannel::Msg_Cancel) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][MessageChannel::Call] Error: Channel error: cannot send/recv
+
+
+###!!! [Parent][MessageChannel::Call] Error: (msgtype=0xAC0001,name=PPluginInstance::Msg___delete__) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x2C0043,name=PBrowser::Msg___delete__) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][OnMaybeDequeueOne] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][OnMaybeDequeueOne] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x820007,name=PHttpChannel::Msg_Cancel) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][MessageChannel::Call] Error: (msgtype=0xAC0023,name=PPluginInstance::Msg_NPP_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Parent][MessageChannel::Call] Error: (msgtype=0xAC0001,name=PPluginInstance::Msg___delete__) Channel error: cannot send/recv
+
+
+###!!! [Parent][MessageChannel::Call] Error: (msgtype=0xAC0023,name=PPluginInstance::Msg_NPP_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Parent][MessageChannel::Call] Error: (msgtype=0xAC0001,name=PPluginInstance::Msg___delete__) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x2C0043,name=PBrowser::Msg___delete__) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][OnMaybeDequeueOne] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][OnMaybeDequeueOne] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][OnMaybeDequeueOne] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x820007,name=PHttpChannel::Msg_Cancel) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Parent][MessageChannel::Call] Error: (msgtype=0xAC0023,name=PPluginInstance::Msg_NPP_Destroy) Channel error: cannot send/recv
+
+
+###!!! [Parent][MessageChannel::Call] Error: (msgtype=0xAC0001,name=PPluginInstance::Msg___delete__) Channel error: cannot send/recv
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x460112,name=PContent::Msg_AsyncMessage) Channel closing: too late to send/recv, messages will be lost
+
+JavaScript error: chrome://global/content/process-content.js, line 30: NS_ERROR_UNEXPECTED: Component returned failure code: 0x8000ffff (NS_ERROR_UNEXPECTED) [nsIMessageSender.sendAsyncMessage]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x2C0043,name=PBrowser::Msg___delete__) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][OnMaybeDequeueOne] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x4600BB,name=PContent::Msg_ConsoleMessage) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][OnMaybeDequeueOne] Error: Channel error: cannot send/recv
+
