@@ -6,7 +6,8 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 from selenium.webdriver.common.by import By
 import unittest
-from selenium.webdriver.common.keys import Keys   
+from selenium.webdriver.common.keys import Keys 
+from selenium.webdriver.firefox.firefox_binary import FirefoxBinary  
 # from selenium.webdriver.common.action_chains import ActionChains #模拟键盘鼠标输入
 
 def wait(seconds):
@@ -20,6 +21,8 @@ class terminal_test(unittest.TestCase):#���Ի���Ϊϵͳ�����
         print(u"虚拟桌面管理测试")
     def setUp(self):
         #
+        binary = FirefoxBinary(r"C:\Program Files\Mozilla Firefox\firefox.exe")
+        self.driver = webdriver.Firefox(firefox_binary=binary)
         self.driver = webdriver.Firefox()
         self.driver.implicitly_wait(30) #智能等待30s 
         self.driver.maximize_window()
@@ -33,10 +36,12 @@ class terminal_test(unittest.TestCase):#���Ի���Ϊϵͳ�����
         self.driver.find_element_by_xpath("/html/body/div[1]/div[1]/div/ul/li[2]/a").click()
         wait(1)
         locator=(By.ID,"instances__action_launch")
-        WebDriverWait(self.driver,30,0.5).until(EC.visibility_of_element_located(locator))
+        WebDriverWait(self.driver,60,0.5).until(EC.visibility_of_element_located(locator))
         self.driver.find_element_by_id("instances__action_launch").click()
         wait(5)
-        self.driver.find_element_by_id("id_name").send_keys("Auto-Test-for-terminal-1")
+        self.driver.find_element_by_id("id_name").send_keys("Auto-Test-for-terminal")
+        self.driver.find_element_by_id("id_count").clear()
+        self.driver.find_element_by_id("id_count").send_keys("2")
         self.driver.find_element_by_id("id_image_id").send_keys(Keys.ARROW_DOWN)
         self.driver.find_element_by_xpath(".//a[@href='#launch_instance__setnetworkaction']").click()
         items=self.driver.find_elements_by_xpath(".//input[@name='network']")
@@ -48,25 +53,11 @@ class terminal_test(unittest.TestCase):#���Ի���Ϊϵͳ�����
         self.driver.find_element_by_xpath("/html/body/div[3]/div/form/div/div/div[3]/input").click()
         wait(3)
         locator=(By.XPATH,"/html/body/div[1]/div[2]/div[3]/div/div/div[2]/form/table/tbody/tr[1]/td[8]")
-        WebDriverWait(self.driver,60,0,5).until(EC.text_to_be_present_in_element(locator,U'无'))
-          
-        self.driver.find_element_by_id("instances__action_launch").click()
-        wait(5)
-        self.driver.find_element_by_id("id_name").send_keys("Auto-Test-for-terminal-2")
-        self.driver.find_element_by_id("id_image_id").send_keys(Keys.ARROW_DOWN)
-        self.driver.find_element_by_xpath(".//a[@href='#launch_instance__setnetworkaction']").click()
-        items=self.driver.find_elements_by_xpath(".//input[@name='network']")
-        if len(items)>1:
-            for item in items:
-                item.click()
-                item.click()
-            items[0].click()
-        self.driver.find_element_by_xpath("/html/body/div[3]/div/form/div/div/div[3]/input").click()
-        wait(3)
-        locator=(By.XPATH,"/html/body/div[1]/div[2]/div[3]/div/div/div[2]/form/table/tbody/tr[1]/td[8]")
-        WebDriverWait(self.driver,60,0,5).until(EC.text_to_be_present_in_element(locator,U'无'))
+        WebDriverWait(self.driver,300,0,5).until(EC.text_to_be_present_in_element(locator,U'无'))
         self.driver.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/ul/li[3]/a").click()
         wait(5)
+
+          
     def tearDown(self): 
         driver=self.driver
         #删除创建的虚拟机
@@ -77,10 +68,17 @@ class terminal_test(unittest.TestCase):#���Ի���Ϊϵͳ�����
         wait(3)
         driver.find_element_by_id("instances__action_terminate").click()
         wait(1)    
-        driver.find_element_by_xpath(".//a[@class='btn btn-primary btn-danger']").click()     
-        wait(5)  
-        driver.find_element_by_id("instances__action_trash").click() 
+        driver.find_element_by_xpath(".//a[@class='btn btn-primary btn-danger']").click()
+        url= driver.current_url    
+        while url != "http://192.168.20.215/dashboard/instances_manager/trash":
+            driver.find_element_by_id("instances__action_trash").click()
+            wait(5)
+            url= driver.current_url
         wait(3)
+        driver.refresh()
+        wait(10)
+        locator=(By.XPATH,".//input[@class='table-row-multi-select']")
+        WebDriverWait(driver,30,0.5).until(EC.element_to_be_clickable(locator))
         driver.find_element_by_xpath(".//input[@class='table-row-multi-select']").click()
         driver.find_element_by_id("trash__action_trashinstance").click()
         wait(1)
@@ -188,25 +186,25 @@ class terminal_test(unittest.TestCase):#���Ի���Ϊϵͳ�����
         wait(3)
         #删除节点
         driver.find_element_by_xpath(".//li[@data-nodeid='2']").click()
-        wait(1)
+        wait(2)
         driver.find_element_by_id("tree_delete").click()
-        wait(1)   
+        wait(3)   
         elem=driver.switch_to_alert() 
         elem.accept() # elem.dismiss 
         wait(5)
-        
+   
         driver.find_element_by_xpath(".//li[@data-nodeid='0']").click()
-        wait(1)
+        wait(2)
         driver.find_element_by_xpath(".//li[@data-nodeid='1']").click()
-        wait(1)
+        wait(2)
         driver.find_element_by_id("tree_delete").click()
-        wait(1)
+        wait(3)
         elem=driver.switch_to_alert() #获取对话框对象
         elem.accept() #点击确认  elem.dismiss 是点击取消
         wait(5)
         
         driver.find_element_by_id("tree_delete").click()
-        wait(1)
+        wait(3)
         elem=driver.switch_to_alert() #获取对话框对象
         elem.accept() #点击确认  elem.dismiss 是点击取消
         wait(5)

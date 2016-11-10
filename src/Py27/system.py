@@ -6,7 +6,7 @@ import time
 from selenium.webdriver.common.by import By
 import unittest
 from selenium.webdriver.common.keys import Keys   
-from selenium.webdriver.common.alert import Alert
+from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 def wait(seconds):
     time.sleep(seconds)
 class system_test(unittest.TestCase):
@@ -18,7 +18,9 @@ class system_test(unittest.TestCase):
         print(u"系统管理测试结束")
     def setUp(self):
         #完成登录
-        self.driver = webdriver.Firefox()
+        binary = FirefoxBinary(r"C:\Program Files\Mozilla Firefox\firefox.exe")
+        self.driver = webdriver.Firefox(firefox_binary=binary)
+#         self.driver = webdriver.Firefox()
         self.driver.implicitly_wait(30) # 隐性等待，最长等30秒
         self.driver.maximize_window()
         self.driver.get("http://192.168.20.215/dashboard")
@@ -100,6 +102,12 @@ class system_test(unittest.TestCase):
         #############管理用户################     
         dr.find_element_by_xpath(".//a[@tabindex='5']").click()
         wait(5)
+        
+        #获取原管理用户
+        admin=dr.find_element_by_xpath("/html/body/div[1]/div[2]/div[3]/div/div/div[2]/form/table/tbody/tr/td[6]/div/a[1]")
+        edit_admin_id=admin.get_attribute("id")
+#         print(edit_admin_id)
+#         edit_admin_id="users__row_c40ce047747c48d1b22d91da268029cc__action_edit"
         #创建管理用户
         dr.find_element_by_id("users__action_create").click()
         dr.find_element_by_id("id_name").send_keys("Auto-Test")
@@ -109,43 +117,65 @@ class system_test(unittest.TestCase):
         dr.find_element_by_id("id_role_id").send_keys(Keys.ARROW_DOWN)
         dr.find_element_by_id("id_role_id").submit()
         wait(5)
+           
         #编辑
-        dr.find_element_by_xpath("/html/body/div[1]/div[2]/div[3]/div/div/div[2]/form/table/tbody/tr[2]/td[6]/div/a[1]").click()
+        item=dr.find_element_by_xpath("/html/body/div[1]/div[2]/div[3]/div/div/div[2]/form/table/tbody/tr[1]/td[6]/div/a[1]")
+        if item.get_attribute("id")!=edit_admin_id:
+            item.click()
+        else:
+            dr.find_element_by_xpath("/html/body/div[1]/div[2]/div[3]/div/div/div[2]/form/table/tbody/tr[2]/td[6]/div/a[1]").click()
         wait(3)
         dr.find_element_by_id("id_name").clear()
         dr.find_element_by_id("id_name").send_keys("Edit")
         dr.find_element_by_id("id_role").send_keys(Keys.ARROW_UP)
-        dr.find_element_by_id("id_role").submit()
-        wait(5)
-        #修改密码  禁用用户
-        items=dr.find_elements_by_xpath(".//a[@class='btn btn-default btn-sm dropdown-toggle']")
-        items[1].click()
-        wait(1)
-        items=dr.find_elements_by_xpath(u".//a[@title='修改密码']")
-        items[1].click()
+        dr.find_element_by_id("id_role").submit()     
+        wait(10)
+          
+        #修改密码  
+        elems=dr.find_elements_by_xpath(".//a[@class='btn btn-default btn-sm dropdown-toggle']")
+        item=dr.find_element_by_xpath("/html/body/div[1]/div[2]/div[3]/div/div/div[2]/form/table/tbody/tr[1]/td[6]/div/a[1]")
+        if item.get_attribute("id")!=edit_admin_id:
+            elems[0].click()
+        else:
+            elems[1].click()
+        wait(3)
+        dr.find_element_by_xpath(u".//a[@title='修改密码']").click()
+        wait(3)
         dr.find_element_by_id("id_password").send_keys("2")
         dr.find_element_by_id("id_confirm_password").send_keys("2")
         dr.find_element_by_id("id_confirm_password").submit()
         wait(5)
-        
-        items=dr.find_elements_by_xpath(".//a[@class='btn btn-default btn-sm dropdown-toggle']")
-        items[1].click()
-        wait(1)
-        dr.find_element_by_xpath("/html/body/div[1]/div[2]/div[3]/div/div/div[2]/form/table/tbody/tr[2]/td[6]/div/ul/li[2]/button").click()
+        #禁用/激活
+        elems=dr.find_elements_by_xpath(".//a[@class='btn btn-default btn-sm dropdown-toggle']")
+        item=dr.find_element_by_xpath("/html/body/div[1]/div[2]/div[3]/div/div/div[2]/form/table/tbody/tr[1]/td[6]/div/a[1]") 
+        if item.get_attribute("id")!=edit_admin_id:
+            elems[0].click()
+        else:
+            elems[1].click()
+        dr.find_element_by_xpath(u".//button[@title='禁用用户']").click()
+        wait(5)
+          
+        elems=dr.find_elements_by_xpath(".//a[@class='btn btn-default btn-sm dropdown-toggle']")
+        item=dr.find_element_by_xpath("/html/body/div[1]/div[2]/div[3]/div/div/div[2]/form/table/tbody/tr[1]/td[6]/div/a[1]") 
+        if item.get_attribute("id")!=edit_admin_id:
+            elems[0].click()
+        else:
+            elems[1].click()
+        dr.find_element_by_xpath(u".//button[@title='激活用户']").click()
         wait(5)
         
-        items=dr.find_elements_by_xpath(".//a[@class='btn btn-default btn-sm dropdown-toggle']")
-        items[1].click()
-        wait(1)
-        dr.find_element_by_xpath("/html/body/div[1]/div[2]/div[3]/div/div/div[2]/form/table/tbody/tr[2]/td[6]/div/ul/li[2]/button").click()
-        wait(5)
-        
-        dr.find_element_by_xpath("/html/body/div[1]/div[2]/div[3]/div/div/div[2]/form/table/tbody/tr[2]/td[1]/input").click()
-        dr.find_element_by_id("users__action_delete").click()
-        wait(2)
+        #删除用户
+        elems=dr.find_elements_by_xpath(".//a[@class='btn btn-default btn-sm dropdown-toggle']")
+        item=dr.find_element_by_xpath("/html/body/div[1]/div[2]/div[3]/div/div/div[2]/form/table/tbody/tr[1]/td[6]/div/a[1]") 
+        if item.get_attribute("id")!=edit_admin_id:
+            elems[0].click()
+        else:
+            elems[1].click()
+        elems=dr.find_elements_by_xpath(u".//button[@title='删除用户']")
+        elems[1].click()
+        wait(3)
         dr.find_element_by_xpath(".//a[@class='btn btn-primary btn-danger']").click()
-        locator=(By.XPATH,".//a[@tabindex='1']")
-        WebDriverWait(self.driver,20,0.5).until(EC.presence_of_element_located(locator))
+        wait(5)
         
         ############系统设置##########################
         dr.find_element_by_xpath(".//a[@tabindex='6']").click()
@@ -155,12 +185,13 @@ class system_test(unittest.TestCase):
         dr.find_element_by_id("id_pagesize").send_keys(Keys.ARROW_UP)
         dr.find_element_by_id("id_instance_log_length").send_keys(Keys.ARROW_UP)
         dr.find_element_by_id("id_instance_log_length").submit()
-        wait(3)
+        wait(10)
         dr.find_element_by_id("id_language").send_keys(Keys.ARROW_DOWN)
         dr.find_element_by_name("timezone").send_keys(Keys.ARROW_DOWN)
         dr.find_element_by_id("id_pagesize").send_keys(Keys.ARROW_DOWN)
         dr.find_element_by_id("id_instance_log_length").send_keys(Keys.ARROW_DOWN)
         dr.find_element_by_id("id_instance_log_length").submit()
+        wait(10)
         locator=(By.XPATH,".//a[@tabindex='1']")
         WebDriverWait(self.driver,20,0.5).until(EC.presence_of_element_located(locator))
         
@@ -176,12 +207,13 @@ class system_test(unittest.TestCase):
         dr.find_element_by_id("id_username").send_keys("admin")
         dr.find_element_by_id("id_password").send_keys("123qwe")
         self.driver.find_element_by_id('loginBtn').click()
-        locator=(By.XPATH,"/html/body/div[1]/div[1]/div[2]/ul/li[4]/a" )
-        WebDriverWait(self.driver,20,0.5).until(EC.presence_of_element_located(locator))
+        locator=(By.XPATH,"/html/body/div[1]/div[1]/div[2]/ul/li[4]/a")
+        WebDriverWait(dr,60,0.5).until(EC.element_to_be_clickable(locator))
+        wait(5)
         self.driver.find_element_by_xpath("/html/body/div[1]/div[1]/div[2]/ul/li[4]/a").click()
-        locator=(By.XPATH,".//a[@tabindex='1']")
-        WebDriverWait(self.driver,20,0.5).until(EC.presence_of_element_located(locator))
-        
+        locator=(By.XPATH,".//a[@tabindex='8']")
+        WebDriverWait(dr,60,0.5).until(EC.element_to_be_clickable(locator))
+        wait(3)
         #############操作记录#############################
         dr.find_element_by_xpath(".//a[@tabindex='8']").click()
         locator=(By.NAME,"operationrecording__filter__q")
@@ -302,31 +334,47 @@ class system_test(unittest.TestCase):
         
         dr.find_element_by_xpath(".//a[@href='?tab=host_monitor__vm_monitor_tab']").click()
         wait(3)
-        for i in range(1,3):
+        for i in range(1,4):
             dr.find_element_by_xpath(u".//button[@title='监控 虚拟机']").click()
             wait(10)
-        for i in range(1,3):
+        for i in range(1,4):
             dr.find_element_by_xpath(u".//button[@title='取消监控 虚拟机']").click()
             wait(10)    
         
         #删除虚拟机
-        dr.find_element_by_xpath("/html/body/div[1]/div[1]/div/ul/li[2]/a").click()
-        wait(3)
+        url=dr.current_url
+        while url !="http://192.168.20.215/dashboard/instances_manager/":
+            dr.find_element_by_xpath("/html/body/div[1]/div[1]/div/ul/li[2]/a").click()
+            wait(10)
+            url=dr.current_url
         items=dr.find_elements_by_xpath("//input[@class='table-row-multi-select']")
+        while len(items)<4:
+            dr.refresh()
+            wait(5)
+            items=dr.find_elements_by_xpath("//input[@class='table-row-multi-select']")
         items[1].click()
         items[2].click()
         items[3].click()
         dr.find_element_by_xpath("/html/body/div[1]/div[2]/div[3]/div/div/div[2]/form/table/thead/tr[1]/th/div/div[2]/a").click()
         wait(3)
         dr.find_element_by_id("instances__action_terminate").click()
-        wait(1)    
+        wait(2)    
         dr.find_element_by_xpath(".//a[@class='btn btn-primary btn-danger']").click()       
-        wait(5)
-        dr.find_element_by_id("instances__action_trash").click() 
+        url= dr.current_url    
+        while url != "http://192.168.20.215/dashboard/instances_manager/trash":
+            dr.find_element_by_id("instances__action_trash").click()
+            wait(5)
+            url= dr.current_url
         wait(3)
+        dr.refresh()
+        wait(10)
+        locator=(By.XPATH,".//input[@class='table-row-multi-select']")
+        WebDriverWait(dr,30,0.5).until(EC.element_to_be_clickable(locator))
         dr.find_element_by_xpath(".//input[@class='table-row-multi-select']").click()
         dr.find_element_by_id("trash__action_trashinstance").click()
         wait(1)
         dr.find_element_by_xpath(".//a[@class='btn btn-primary btn-danger']").click()
         wait(10)
-        
+if __name__ == "__main__":
+    unittest.main()        
+

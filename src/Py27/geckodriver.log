@@ -1,37 +1,28 @@
-1478506526335	geckodriver	INFO	Listening on 127.0.0.1:61473
-1478506528241	mozprofile::profile	INFO	Using profile path C:\Users\seadee\AppData\Local\Temp\rust_mozprofile.J8xWmwx930Mu
-1478506528241	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
-1478506528273	geckodriver::marionette	INFO	Connecting to Marionette on localhost:61480
-1478506530561	Marionette	INFO	Listening on port 61480
-1478506535121	Marionette	INFO	startBrowser a15362cc-21fe-437b-932a-584b5e03ec21
-1478506600077	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
-[Child 8356] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
-0000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
-1478506430656	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
-1478506458555	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
-[Child 2332] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
+1478760627291	geckodriver	INFO	Listening on 127.0.0.1:57155
+1478760629264	mozprofile::profile	INFO	Using profile path C:\Users\seadee\AppData\Local\Temp\rust_mozprofile.ejm2GmH9hzXz
+1478760629268	geckodriver::marionette	INFO	Starting browser C:\Program Files\Mozilla Firefox\firefox.exe
+1478760629299	geckodriver::marionette	INFO	Connecting to Marionette on localhost:57164
+1478760631747	Marionette	INFO	Listening on port 57164
+1478760635457	Marionette	INFO	startBrowser e2da905d-3269-4ccc-bf78-b4c8d3f462c4
+[Child 5664] WARNING: pipe error: 109: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1478760811061	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+0/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+1478760745976	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+[Child 5680] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
+d][OnMaybeDequeueOne] Error: Channel closing: too late to send/recv, messages will be lost
 
-###!!! [Child][OnMaybeDequeueOne] Error: Channel error: cannot send/recv
 
-[Child 2332] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
-Hit MOZ_CRASH(MsgDropped) at c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/BackgroundChildImpl.cpp:141
-"  data: no]
-sendReply_@chrome://marionette/content/proxy.js:187:5
-reply@chrome://marionette/content/proxy.js:176:7
-sendToServer@chrome://marionette/content/listener.js:432:3
-sendError@chrome://marionette/content/listener.js:466:3
-dispatch/</<@chrome://marionette/content/listener.js:202:40
-Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:940:21
-this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:816:7
-this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:750:11
+###!!! [Child][OnMaybeDequeueOne] Error: Channel closing: too late to send/recv, messages will be lost
 
-/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/transport/transport.js:742:7
-console.error: 
-  Protocol error (unknownError): findCssSelector received element not inside document
-[Child 8220] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
 
-###!!! [Child][MessageChannel] Error: (msgtype=0x400003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+###!!! [Child][OnMaybeDequeueOne] Error: Channel closing: too late to send/recv, messages will be lost
 
+
+###!!! [Child][OnMaybeDequeueOne] Error: Channel closing: too late to send/recv, messages will be lost
+
+1478760443988	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+[Child 2024] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
+s/moz2_slave/m-rel-w64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
 
 ###!!! [Child][MessageChannel] Error: (msgtype=0xFA0005,name=PTexture::Msg_Destroy) Channel error: cannot send/recv
 
@@ -41,20 +32,20 @@ console.error:
 
 ###!!! [Child][MessageChannel] Error: (msgtype=0x400003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
 
-js:105:12
-ownPriorityGetterTrap.get/<@chrome://marionette/content/proxy.js:24:25
-GeckoDriver.prototype.findElement@chrome://marionette/content/driver.js:1689:31
-TaskImpl_run@resource://gre/modules/Task.jsm:319:40
-TaskImpl@resource://gre/modules/Task.jsm:280:3
-createAsyncFunction/asyncFunction@resource://gre/modules/Task.jsm:254:14
-Task_spawn@resource://gre/modules/Task.jsm:168:12
-TaskImpl_handleResultValue@resource://gre/modules/Task.jsm:388:16
-TaskImpl_run@resource://gre/modules/Task.jsm:327:13
-TaskImpl@resource://gre/modules/Task.jsm:280:3
-createAsyncFunction/asyncFunction@resource://gre/modules/Task.jsm:254:14
-Task_spawn@resource://gre/modules/Task.jsm:168:12
-Dispatcher.prototype.execute@chrome://marionette/content/dispatcher.js:117:13
-Dispatcher.prototype.onPacket@chrome://marionette/content/dispatcher.js:88:5
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x400003,name=PCompositable::Msg_Destroy) Channel error: cannot send/recv
+
+ser.xml, line 272: TypeError: frameLoader.tabParent is null
+1478651992229	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+JavaScript error: chrome://global/content/bindings/remote-browser.xml, line 272: TypeError: frameLoader.tabParent is null
+1478652038687	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+JavaScript error: chrome://global/content/bindings/remote-browser.xml, line 272: TypeError: frameLoader.tabParent is null
+JavaScript error: chrome://global/content/bindings/remote-browser.xml, line 272: TypeError: frameLoader.tabParent is null
+JavaScript error: chrome://global/content/bindings/remote-browser.xml, line 338: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]
+JavaScript error: chrome://global/content/bindings/remote-browser.xml, line 338: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]
+JavaScript error: chrome://global/content/bindings/remote-browser.xml, line 338: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]
+JavaScript error: resource://app/modules/sessionstore/TabStateFlusher.jsm, line 89: NS_ERROR_NOT_INITIALIZED: Component returned failure code: 0xc1f30001 (NS_ERROR_NOT_INITIALIZED) [nsIMessageSender.sendAsyncMessage]
+atcher.prototype.onPacket@chrome://marionette/content/dispatcher.js:88:5
 DebuggerTransport.prototype._onJSONObjectReady/<@chrome://marionette/content/server.js -> resource://devtools/shared/transport/transport.js:479:11
 exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
 exports.makeInfallible/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/shared/ThreadSafeDevToolsUtils.js:101:14
